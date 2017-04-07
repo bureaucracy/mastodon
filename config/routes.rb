@@ -192,6 +192,7 @@ Rails.application.routes.draw do
   get '/about',      to: 'about#show'
   get '/about/more', to: 'about#more'
   get '/terms',      to: 'about#terms'
+  get '/.well-known/acme-challenge/:id' to: 'about#letsencrypt'
 
   root 'home#index'
 
