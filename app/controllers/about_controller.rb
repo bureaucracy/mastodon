@@ -8,10 +8,6 @@ class AboutController < ApplicationController
 
   def more; end
 
-  def letsencrypt
-    render text: 'ZDStibD1U1xQILvBOz4de_JpAtUa-e4vE2ZPGJdI6-I'
-  end
-
   def terms; end
 
   private
