@@ -94,11 +94,11 @@ Rails.application.configure do
 
   # E-mails
   config.action_mailer.smtp_settings = {
-    :port           => ENV['SMTP_PORT'],
-    :address        => ENV['SMTP_SERVER'],
-    :user_name      => ENV['SMTP_LOGIN'],
-    :password       => ENV['SMTP_PASSWORD'],
-    :domain         => ENV['SMTP_DOMAIN'] || config.x.local_domain,
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => ENV['MAILGUN_DOMAIN'] || config.x.local_domain,
     :authentication => :plain,
   }
 
