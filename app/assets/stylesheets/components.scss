@@ -150,7 +150,7 @@
 }
 
 .lightbox .icon-button {
-  color: $color1;
+  color: $color2;
 }
 
 .compose-form__warning {
@@ -315,7 +315,7 @@ a.status__content__spoiler-link {
   padding: 8px 10px;
   position: relative;
   min-height: 48px;
-  border-bottom: 1px solid transparent;
+  margin-bottom: 2px
   cursor: default;
 
   .status__relative-time {
@@ -746,6 +746,7 @@ a.status__content__spoiler-link {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
+  background-color: rgba(1, 1, 1, 0.6)
 }
 
 .drawer__tab {
