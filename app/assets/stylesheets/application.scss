@@ -98,7 +98,7 @@ table {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: $color1 image-url('https://media.giphy.com/media/yQ7JbMwf6PqI8/giphy.gif');
+  background: url('https://media.giphy.com/media/yQ7JbMwf6PqI8/giphy.gif') no-repeat;
   background-size: cover;
   background-attachment: fixed;
   font-size: 13px;
