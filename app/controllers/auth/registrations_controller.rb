@@ -15,12 +15,12 @@ class Auth::RegistrationsController < Devise::RegistrationsController
 
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up) do |u|
-      u.permit({ account_attributes: [:username] }, :email, :password, :password_confirmation)
+      u.permit({ account_attributes: [:username] }, :email, :password, :password_confirmation, :quiz)
     end
   end
 
   def after_sign_up_path_for(_resource)
-    new_user_session_path
+    redirect_to root_path
   end
 
   def after_inactive_sign_up_path_for(_resource)

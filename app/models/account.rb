@@ -11,16 +11,6 @@ class Account < ApplicationRecord
   validates :username, presence: true, format: { with: /\A[a-z0-9_]+\z/i, message: 'only letters, numbers and underscores' }, uniqueness: { scope: :domain, case_sensitive: false }, length: { maximum: 30 }, if: 'local?'
   validates :username, presence: true, uniqueness: { scope: :domain, case_sensitive: true }, unless: 'local?'
 
-  # Avatar upload
-  has_attached_file :avatar, styles: { original: '120x120#' }, convert_options: { all: '-quality 80 -strip' }
-  validates_attachment_content_type :avatar, content_type: IMAGE_MIME_TYPES
-  validates_attachment_size :avatar, less_than: 2.megabytes
-
-  # Header upload
-  has_attached_file :header, styles: { original: '700x335#' }, convert_options: { all: '-quality 80 -strip' }
-  validates_attachment_content_type :header, content_type: IMAGE_MIME_TYPES
-  validates_attachment_size :header, less_than: 2.megabytes
-
   # Local user profile validations
   validates :display_name, length: { maximum: 30 }, if: 'local?'
   validates :note, length: { maximum: 160 }, if: 'local?'

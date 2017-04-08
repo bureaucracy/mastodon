@@ -22,8 +22,6 @@
   %p= t('about.about_mastodon').html_safe
 
   .screenshot-with-signup
-    .mascot= image_tag 'fluffy-elephant-friend.png'
-
     - if @instance_presenter.open_registrations
       = render 'registration'
     - else

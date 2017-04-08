@@ -10,6 +10,7 @@
   = f.input :email, placeholder: t('simple_form.labels.defaults.email'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.email') }
   = f.input :password, autocomplete: "off", placeholder: t('simple_form.labels.defaults.password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.password') }
   = f.input :password_confirmation, autocomplete: "off", placeholder: t('simple_form.labels.defaults.confirm_password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.confirm_password') }
+  = f.input :quiz, autocomplete: "off", placeholder: t('simple_form.labels.defaults.quiz'), input_html: { 'aria-label' => t('simple_form.labels.defaults.quiz') }
 
   .actions
     = f.button :button, t('auth.register'), type: :submit
