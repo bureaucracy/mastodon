@@ -1,6 +1,5 @@
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import Avatar from './avatar';
 import DisplayName from './display_name';
 import Permalink from './permalink';
 import IconButton from './icon_button';
@@ -65,7 +64,6 @@ const Account = React.createClass({
       <div className='account'>
         <div style={{ display: 'flex' }}>
           <Permalink key={account.get('id')} className='account__display-name' href={account.get('url')} to={`/accounts/${account.get('id')}`}>
-            <div style={{ float: 'left', marginLeft: '12px', marginRight: '10px' }}><Avatar src={account.get('avatar')} size={36} /></div>
             <DisplayName account={account} />
           </Permalink>
 

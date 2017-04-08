@@ -89,10 +89,6 @@ const Status = React.createClass({
           </div>
 
           <a onClick={this.handleAccountClick.bind(this, status.getIn(['account', 'id']))} href={status.getIn(['account', 'url'])} className='status__display-name' style={{ display: 'block', maxWidth: '100%', paddingRight: '25px' }}>
-            <div className='status__avatar' style={{ position: 'absolute', left: '10px', top: '10px', width: '48px', height: '48px' }}>
-              <Avatar src={status.getIn(['account', 'avatar'])} size={48} />
-            </div>
-
             <DisplayName account={status.get('account')} />
           </a>
         </div>
