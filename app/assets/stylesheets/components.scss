@@ -52,7 +52,7 @@
 .icon-button {
   display: inline-block;
   padding: 0;
-  color: lighten($color1, 26%);
+  color: $color2;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -746,7 +746,7 @@ a.status__content__spoiler-link {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  background-color: rgba(1, 1, 1, 0.7)
+  background-color: rgba(1, 1, 1, 0.7);
 }
 
 .drawer__tab {
@@ -1162,21 +1162,6 @@ a.status__content__spoiler-link {
   &.selected {
     background: $color4;
     color: $color5;
-  }
-}
-
-.getting-started {
-  box-sizing: border-box;
-  padding-bottom: 235px;
-  background: image-url('mastodon-getting-started.png') no-repeat 0 100% local;
-  flex: 1 0 auto;
-
-  p {
-    color: $color2;
-  }
-
-  a {
-    color: lighten($color1, 26%);
   }
 }
 
