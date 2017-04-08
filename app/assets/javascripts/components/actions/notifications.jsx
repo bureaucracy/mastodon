@@ -45,7 +45,7 @@ export function updateNotifications(notification, intlMessages, intlLocale) {
       const title = new IntlMessageFormat(intlMessages[`notification.${notification.type}`], intlLocale).format({ name: notification.account.display_name.length > 0 ? notification.account.display_name : notification.account.username });
       const body  = (notification.status && notification.status.spoiler_text.length > 0) ? notification.status.spoiler_text : $('<p>').html(notification.status ? notification.status.content : '').text();
 
-      new Notification(title, { body, icon: notification.account.avatar, tag: notification.id });
+      new Notification(title, { body, tag: notification.id });
     }
   };
 };

@@ -28,10 +28,6 @@ class SuspendAccountService < BaseService
     @account.suspended    = true
     @account.display_name = ''
     @account.note         = ''
-    @account.avatar.destroy
-    @account.avatar.clear
-    @account.header.destroy
-    @account.header.clear
     @account.save!
   end
 

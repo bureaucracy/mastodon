@@ -1,5 +1,4 @@
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import Avatar from './avatar';
 import RelativeTimestamp from './relative_timestamp';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import DisplayName from './display_name';

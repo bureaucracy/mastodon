@@ -1,11 +1,5 @@
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-const style = {
-  display: 'flex',
-  flex: '1 1 auto',
-  overflowX: 'auto'
-};
-
 const ColumnsArea = React.createClass({
 
   propTypes: {
@@ -16,7 +10,7 @@ const ColumnsArea = React.createClass({
 
   render () {
     return (
-      <div className='columns-area' style={style}>
+      <div className='columns-area'>
         {this.props.children}
       </div>
     );

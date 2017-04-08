@@ -8,9 +8,6 @@ class Settings::ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_account
 
-  obfuscate_filename [:account, :avatar]
-  obfuscate_filename [:account, :header]
-
   def show; end
 
   def update
@@ -24,7 +21,7 @@ class Settings::ProfilesController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:display_name, :note, :avatar, :header, :locked)
+    params.require(:account).permit(:display_name, :note, :locked)
   end
 
   def set_account

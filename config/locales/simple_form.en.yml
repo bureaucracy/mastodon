@@ -3,7 +3,6 @@ en:
   simple_form:
     hints:
       defaults:
-        avatar: PNG, GIF or JPG. At most 2MB. Will be downscaled to 120x120px
         display_name: At most 30 characters
         header: PNG, GIF or JPG. At most 2MB. Will be downscaled to 700x335px
         locked: Requires you to manually approve followers and defaults post privacy to followers-only
@@ -12,7 +11,6 @@ en:
         data: CSV file exported from another Mastodon instance
     labels:
       defaults:
-        avatar: Avatar
         confirm_new_password: Confirm new password
         confirm_password: Confirm password
         current_password: Current password

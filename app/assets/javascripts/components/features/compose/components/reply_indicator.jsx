@@ -1,6 +1,5 @@
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import Avatar from '../../../components/avatar';
 import IconButton from '../../../components/icon_button';
 import DisplayName from '../../../components/display_name';
 import emojify from '../../../emoji';
@@ -50,8 +49,9 @@ const ReplyIndicator = React.createClass({
           <div style={{ float: 'right', lineHeight: '24px' }}><IconButton title={intl.formatMessage(messages.cancel)} icon='times' onClick={this.handleClick} /></div>
 
           <a href={status.getIn(['account', 'url'])} onClick={this.handleAccountClick} className='reply-indicator__display-name' style={{ display: 'block', maxWidth: '100%', paddingRight: '25px', textDecoration: 'none', overflow: 'hidden', lineHeight: '24px' }}>
-            <div style={{ float: 'left', marginRight: '5px' }}><Avatar size={24} src={status.getIn(['account', 'avatar'])} /></div>
-            <DisplayName account={status.get('account')} />
+            <div style={{ float: 'left', marginRight: '5px' }}>
+              <DisplayName account={status.get('account')} />
+            </div>
           </a>
         </div>
 

@@ -1,8 +1,5 @@
 .detailed-status.light
   = link_to TagManager.instance.url_for(status.account), class: 'detailed-status__display-name p-author h-card', target: @external_links ? '_blank' : nil, rel: 'noopener' do
-    %div
-      %div.avatar
-        = image_tag status.account.avatar.url(:original), width: 48, height: 48, alt: '', class: 'u-photo'
     %span.display-name
       %strong.p-name.emojify= display_name(status.account)
       %span.p-nickname= acct(status.account)

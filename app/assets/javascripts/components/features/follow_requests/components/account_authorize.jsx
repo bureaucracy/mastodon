@@ -1,6 +1,5 @@
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import Permalink from '../../../components/permalink';
-import Avatar from '../../../components/avatar';
 import DisplayName from '../../../components/display_name';
 import emojify from '../../../emoji';
 import IconButton from '../../../components/icon_button';
@@ -33,7 +32,6 @@ const AccountAuthorize = ({ intl, account, onAuthorize, onReject }) => {
     <div>
       <div style={outerStyle}>
         <Permalink href={account.get('url')} to={`/accounts/${account.get('id')}`} className='detailed-status__display-name' style={{ display: 'block', overflow: 'hidden', marginBottom: '15px' }}>
-          <div style={{ float: 'left', marginRight: '10px' }}><Avatar src={account.get('avatar')} size={48} /></div>
           <DisplayName account={account} />
         </Permalink>
 

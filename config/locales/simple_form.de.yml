@@ -6,7 +6,6 @@ de:
         locked: Erlaubt dir, Nutzer zu überprüfen, bevor sie dir folgen können
     labels:
       defaults:
-        avatar: Avatar
         confirm_new_password: Neues Passwort bestätigen
         confirm_password: Passwort bestätigen
         current_password: Derzeitiges Passwort

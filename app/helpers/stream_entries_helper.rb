@@ -9,10 +9,6 @@ module StreamEntriesHelper
     "@#{account.acct}#{@external_links && account.local? ? "@#{Rails.configuration.x.local_domain}" : ''}"
   end
 
-  def avatar_for_status_url(status)
-    status.reblog? ? status.reblog.account.avatar.url(:original) : status.account.avatar.url(:original)
-  end
-
   def entry_classes(status, is_predecessor, is_successor, include_threads)
     classes = ['entry']
     classes << 'entry-reblog u-repost-of h-cite' if status.reblog?

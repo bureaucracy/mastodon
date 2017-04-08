@@ -120,14 +120,6 @@ module AtomBuilderHelper
     xml.link(rel: 'enclosure', href: full_asset_url(media.file.url(:original, false)), type: media.file_content_type, length: media.file_file_size)
   end
 
-  def link_avatar(xml, account)
-    single_link_avatar(xml, account, :original, 120)
-  end
-
-  def link_header(xml, account)
-    xml.link('rel' => 'header', 'type' => account.header_content_type, 'media:width' => 700, 'media:height' => 335, 'href' => full_asset_url(account.header.url(:original)))
-  end
-
   def logo(xml, url)
     xml.logo url
   end
@@ -163,8 +155,6 @@ module AtomBuilderHelper
     email            xml, account.local? ? "#{account.acct}@#{Rails.configuration.x.local_domain}" : account.acct
     summary          xml, account.note
     link_alternate   xml, TagManager.instance.url_for(account)
-    link_avatar      xml, account
-    link_header      xml, account
     portable_contact xml, account
     privacy_scope    xml, account.locked? ? :private : :public
   end
@@ -277,9 +267,5 @@ module AtomBuilderHelper
                'xmlns:ostatus'  => TagManager::OS_XMLNS,
                'xmlns:mastodon' => TagManager::MTDN_XMLNS,
              }, &block)
-  end
-
-  def single_link_avatar(xml, account, size, px)
-    xml.link('rel' => 'avatar', 'type' => account.avatar_content_type, 'media:width' => px, 'media:height' => px, 'href' => full_asset_url(account.avatar.url(size)))
   end
 end

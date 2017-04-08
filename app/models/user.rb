@@ -13,18 +13,16 @@ class User < ApplicationRecord
   validates :account, presence: true
   validates :locale, inclusion: I18n.available_locales.map(&:to_s), unless: 'locale.nil?'
   validates :email, email: true
-  validates :quiz, presence: true, on: :create
+  #validates :quiz, presence: true, on: :create, inclusion: ENV['QUIZ_ANSWER']
+  validates_each :quiz, presence:true, :on => :create do |record, attr, value|
+    record.errors.add attr, 'Wrong answer, young childsir.' unless
+      value && value == ENV['QUIZ_ANSWER']
+  end
 
   scope :prolific,  -> { joins('inner join statuses on statuses.account_id = users.account_id').select('users.*, count(statuses.id) as statuses_count').group('users.id').order('statuses_count desc') }
   scope :recent,    -> { order('id desc') }
   scope :admins,    -> { where(admin: true) }
   scope :confirmed, -> { where.not(confirmed_at: nil) }
-
-  def validate_quiz
-    if self.quiz != ENV['QUIZ_ANSWER']
-      self.errors[:base] << "Wrong quiz answer, young childsir."
-    end
-  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later

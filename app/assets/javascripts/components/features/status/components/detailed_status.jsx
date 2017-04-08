@@ -1,6 +1,5 @@
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import Avatar from '../../../components/avatar';
 import DisplayName from '../../../components/display_name';
 import StatusContent from '../../../components/status_content';
 import MediaGallery from '../../../components/media_gallery';
@@ -54,7 +53,6 @@ const DetailedStatus = React.createClass({
     return (
       <div style={{ padding: '14px 10px' }} className='detailed-status'>
         <a href={status.getIn(['account', 'url'])} onClick={this.handleAccountClick} className='detailed-status__display-name' style={{ display: 'block', overflow: 'hidden', marginBottom: '15px' }}>
-          <div style={{ float: 'left', marginRight: '10px' }}><Avatar src={status.getIn(['account', 'avatar'])} size={48} /></div>
           <DisplayName account={status.get('account')} />
         </a>
 

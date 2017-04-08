@@ -44,21 +44,6 @@
     }
   }
 
-  .avatar {
-    width: 120px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
-
-    img {
-      width: 120px;
-      height: 120px;
-      display: block;
-      border-radius: 120px;
-    }
-  }
-
   .controls {
     position: absolute;
     top: 10px;
@@ -268,20 +253,6 @@
       overflow: hidden;
       padding: 10px;
       border-bottom: 1px solid $color2;
-    }
-
-    .avatar {
-      width: 60px;
-      height: 60px;
-      float: left;
-      margin-right: 15px;
-
-      img {
-        display: block;
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-      }
     }
 
     .name {

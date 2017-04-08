@@ -1,4 +1,4 @@
-.card.h-card.p-author{ style: "background-image: url(#{@account.header.url( :original)})" }
+.card.h-card.p-author
   - if user_signed_in? && current_account.id != @account.id && !current_account.requested?(@account)
     .controls
       - if current_account.following?(@account)
@@ -9,7 +9,6 @@
     .controls
       .remote-follow
         = link_to t('accounts.remote_follow'), account_remote_follow_path(@account), class: 'button'
-  .avatar= image_tag @account.avatar.url(:original), class: 'u-photo'
   %h1.name
     %span.p-name.emojify= display_name(@account)
     %small

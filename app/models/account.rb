@@ -130,27 +130,6 @@ class Account < ApplicationRecord
     OStatus2::Subscription.new(remote_url, secret: secret, lease_seconds: 86_400 * 30, webhook: webhook_url, hub: hub_url)
   end
 
-  def save_with_optional_avatar!
-    save!
-  rescue ActiveRecord::RecordInvalid
-    self.avatar              = nil
-    self.header              = nil
-    self[:avatar_remote_url] = ''
-    self[:header_remote_url] = ''
-    save!
-  end
-
-  def avatar_remote_url=(url)
-    parsed_url = URI.parse(url)
-
-    return if !%w(http https).include?(parsed_url.scheme) || parsed_url.host.empty? || self[:avatar_remote_url] == url
-
-    self.avatar              = parsed_url
-    self[:avatar_remote_url] = url
-  rescue OpenURI::HTTPError => e
-    Rails.logger.debug "Error fetching remote avatar: #{e}"
-  end
-
   def header_remote_url=(url)
     parsed_url = URI.parse(url)
 
