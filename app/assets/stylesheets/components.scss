@@ -310,8 +310,8 @@ a.status__content__spoiler-link {
   line-height: inherit;
 }
 
-.status {
-  background-color: rgba(1, 1, 1, 0.6);
+.status, .notification {
+  background-color: rgba(1, 1, 1, 0.7);
   padding: 8px 10px;
   position: relative;
   min-height: 48px;
@@ -746,7 +746,7 @@ a.status__content__spoiler-link {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  background-color: rgba(1, 1, 1, 0.6)
+  background-color: rgba(1, 1, 1, 0.7)
 }
 
 .drawer__tab {
