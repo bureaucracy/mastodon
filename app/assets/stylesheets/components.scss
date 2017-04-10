@@ -532,10 +532,6 @@ a.status__content__spoiler-link {
 }
 
 .muted {
-  .status__content p, .status__content a {
-    color: lighten($color1, 26%);
-  }
-
   .status__display-name strong {
     color: #eee;
   }
