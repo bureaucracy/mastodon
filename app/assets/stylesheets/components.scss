@@ -771,6 +771,7 @@ a.status__content__spoiler-link {
   padding: 0;
   position: relative;
   overflow: hidden;
+  height: 90vh;
 }
 
 .drawer__inner {
@@ -1662,7 +1663,8 @@ button.active i.fa-retweet {
 }
 
 .privacy-dropdown {
-  position: relative;
+  position: absolute;
+  z-index: 5;
 }
 
 .privacy-dropdown__dropdown {
