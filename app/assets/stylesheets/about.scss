@@ -1,6 +1,5 @@
 .about-body {
   .wrapper {
-    max-width: 600px;
     margin: 0 auto;
     color: $color3;
     padding-top: 50px;
@@ -19,10 +18,9 @@
     padding: 20px 0;
 
     img {
-      margin-bottom: -5px;
-      margin-right: 5px;
-      width: 46px;
-      height: 46px;
+      margin: 10px auto;
+      width: 10vw;
+      display: block;
     }
   }
 

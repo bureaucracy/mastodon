@@ -20,7 +20,8 @@
     placeholder: t('simple_form.labels.defaults.confirm_password'),
     required: true,
     input_html: { 'aria-label' => t('simple_form.labels.defaults.confirm_password') }
-  = f.input :quiz, autocomplete: "off", placeholder: t('simple_form.labels.defaults.quiz'), input_html: { 'aria-label' => t('simple_form.labels.defaults.quiz') }
+  = t('simple_form.labels.defaults.quiz')
+  = f.input :quiz, autocomplete: "off", input_html: { 'aria-label' => t('simple_form.labels.defaults.quiz') }
 
   .actions
     = f.button :button, t('about.get_started'), type: :submit
