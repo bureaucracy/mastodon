@@ -178,7 +178,6 @@ const ComposeForm = React.createClass({
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div className='compose-form__buttons'>
-            <UploadButtonContainer />
             <PrivacyDropdownContainer />
             <SensitiveButtonContainer />
             <SpoilerButtonContainer />
