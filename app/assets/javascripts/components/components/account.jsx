@@ -63,7 +63,7 @@ const Account = React.createClass({
     return (
       <div className='account'>
         <div style={{ display: 'flex' }}>
-          <Permalink key={account.get('id')} className='account__display-name' href={account.get('url')} to={account.get('url')}`}>
+          <Permalink key={account.get('id')} className='account__display-name' href={account.get('url')} to={`/accounts/${account.get('id')}`}>
             <DisplayName account={account} />
           </Permalink>
 
