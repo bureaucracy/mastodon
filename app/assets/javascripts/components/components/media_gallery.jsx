@@ -154,7 +154,7 @@ const Item = React.createClass({
           href={attachment.get('remote_url') ? attachment.get('remote_url') : attachment.get('url')}
           onClick={this.handleClick}
           target='_blank'
-          style={{ background: `url(${attachment.get('preview_url')}) no-repeat center`, ...thumbStyle }}
+          style={{ background: `url(${attachment.get('url')}) no-repeat center`, ...thumbStyle }}
         />
       );
     } else if (attachment.get('type') === 'gifv') {
