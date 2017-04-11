@@ -16,11 +16,6 @@ class UpdateRemoteProfileService < BaseService
       account.display_name = author_xml.at_xpath('./poco:displayName', poco: TagManager::POCO_XMLNS).content unless author_xml.at_xpath('./poco:displayName', poco: TagManager::POCO_XMLNS).nil?
       account.note         = author_xml.at_xpath('./poco:note', poco: TagManager::POCO_XMLNS).content unless author_xml.at_xpath('./poco:note', poco: TagManager::POCO_XMLNS).nil?
       account.locked       = author_xml.at_xpath('./mastodon:scope', mastodon: TagManager::MTDN_XMLNS)&.content == 'private'
-
-      if !account.suspended? && !DomainBlock.find_by(domain: account.domain)&.reject_media?
-        account.avatar_remote_url = link_href_from_xml(author_xml, 'avatar') if link_has_href?(author_xml, 'avatar')
-        account.header_remote_url = link_href_from_xml(author_xml, 'header') if link_has_href?(author_xml, 'header')
-      end
     end
 
     old_hub_url     = account.hub_url
