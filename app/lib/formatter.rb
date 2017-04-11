@@ -86,8 +86,17 @@ class Formatter
     text   = url[prefix.length, 30]
     suffix = url[prefix.length + 30..-1]
     cutoff = url[prefix.length..-1].length > 30
+    youtube = false
 
-    "<span class=\"invisible\">#{prefix}</span><span class=\"#{cutoff ? 'ellipsis' : ''}\">#{text}</span><span class=\"invisible\">#{suffix}</span>"
+    if text.match(/(youtu\.be|youtube\.com)\/?/i)
+      youtube = url.split('v=')[1].to_s
+    end
+
+    if youtube
+      '<iframe class="vid" width="100%" height="215" src="https://www.youtube.com/embed/' + youtube + '" frameborder="0" allowfullscreen></iframe>'
+    else
+      "<span class=\"invisible\">#{prefix}</span><span class=\"#{cutoff ? 'ellipsis' : ''}\">#{text}</span><span class=\"invisible\">#{suffix}</span>"
+    end
   end
 
   def hashtag_html(match)

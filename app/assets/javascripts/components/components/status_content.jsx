@@ -33,12 +33,10 @@ const StatusContent = React.createClass({
       let youtube = false
 
       let link = links[i];
-      console.log('got here ', link.href, link.href.match(/(www\.|\/\/)(youtu\.be|youtube\.com)\/?/gi))
       if (link.href.match(/(www\.|\/\/)(youtu\.be|youtube\.com)\/?/gi)) {
         youtube = link.href.split('v=')[1];
-        console.log('********************** ', youtube);
       }
-      console.log('got here ..... ', youtube)
+
       let mention = this.props.status.get('mentions').find(item => link.href === item.get('url'));
       let media = this.props.status.get('media_attachments').find(item => link.href === item.get('text_url') || (item.get('remote_url').length > 0 && link.href === item.get('remote_url')));
 

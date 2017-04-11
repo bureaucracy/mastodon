@@ -107,7 +107,8 @@
 
   .detailed-status.light {
     padding: 14px;
-    background: $color5;
+    color: #fff;
+    background: rgba(1, 1, 1, 0.7);
     cursor: default;
 
     .detailed-status__display-name {
@@ -128,8 +129,8 @@
         text-overflow: ellipsis;
 
         strong {
-          font-weight: 500;
-          color: $color1;
+          font-weight: 100;
+          color: $color3;
         }
 
         span {
@@ -140,10 +141,10 @@
     }
 
     .status__content {
-      color: $color1;
+      color: #fff;
 
       a {
-        color: $color4;
+        color: $color3;
       }
 
       a.status__content__spoiler-link {
