@@ -6,7 +6,7 @@
     background: rgba(1, 1, 1, 0.7);
 
     .detailed-status.light, .status.light {
-      border-bottom: 1px solid $color2;
+      margin-bottom: 2px;
     }
 
     &:last-child {
