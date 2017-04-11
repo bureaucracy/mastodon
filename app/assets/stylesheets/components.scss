@@ -1669,21 +1669,21 @@ button.active i.fa-retweet {
   left: 0;
   top: 27px;
   width: 230px;
-  background: $color5;
+  background: rgba(1, 1, 1, 0.7);
   border-radius: 0 4px 4px 4px;
   z-index: 2;
   overflow: hidden;
 }
 
 .privacy-dropdown__option {
-  color: $color1;
+  color: $color2;
   padding: 10px;
   cursor: pointer;
   display: flex;
 
   &:hover, &.active {
-    background: $color4;
-    color: $color5;
+    background: $color2;
+    color: #111;
 
     .privacy-dropdown__option__content {
       color: $color5;

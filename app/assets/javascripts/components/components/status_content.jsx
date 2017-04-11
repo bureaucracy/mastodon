@@ -30,9 +30,17 @@ const StatusContent = React.createClass({
     const links = node.querySelectorAll('a');
 
     for (var i = 0; i < links.length; ++i) {
-      let link    = links[i];
+      let youtube = false
+
+      let link = links[i];
+      console.log('got here ', link.href, link.href.match(/(www\.|\/\/)(youtu\.be|youtube\.com)\/?/gi))
+      if (link.href.match(/(www\.|\/\/)(youtu\.be|youtube\.com)\/?/gi)) {
+        youtube = link.href.split('v=')[1];
+        console.log('********************** ', youtube);
+      }
+      console.log('got here ..... ', youtube)
       let mention = this.props.status.get('mentions').find(item => link.href === item.get('url'));
-      let media   = this.props.status.get('media_attachments').find(item => link.href === item.get('text_url') || (item.get('remote_url').length > 0 && link.href === item.get('remote_url')));
+      let media = this.props.status.get('media_attachments').find(item => link.href === item.get('text_url') || (item.get('remote_url').length > 0 && link.href === item.get('remote_url')));
 
       if (mention) {
         link.addEventListener('click', this.onMentionClick.bind(this, mention), false);
@@ -40,6 +48,8 @@ const StatusContent = React.createClass({
         link.addEventListener('click', this.onHashtagClick.bind(this, link.text), false);
       } else if (media) {
         link.innerHTML = '<i class="fa fa-fw fa-photo"></i>';
+      } else if (youtube) {
+        link.innerHTML = '<iframe class="vid" width="100%" height="215" src="https://www.youtube.com/embed/' + youtube + '" frameborder="0" allowfullscreen></iframe>'
       } else {
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener');
