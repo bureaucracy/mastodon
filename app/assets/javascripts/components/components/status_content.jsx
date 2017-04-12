@@ -31,10 +31,13 @@ const StatusContent = React.createClass({
 
     for (var i = 0; i < links.length; ++i) {
       let youtube = false
+      let img = false
 
       let link = links[i];
       if (link.href.match(/(www\.|\/\/)(youtu\.be|youtube\.com)\/?/gi)) {
         youtube = link.href.split('v=')[1];
+      } else if (link.href.match(/\.(jpg|jpeg|png|gif)/i)) {
+        img = link.href
       }
 
       let mention = this.props.status.get('mentions').find(item => link.href === item.get('url'));
@@ -47,7 +50,9 @@ const StatusContent = React.createClass({
       } else if (media) {
         link.innerHTML = '<i class="fa fa-fw fa-photo"></i>';
       } else if (youtube) {
-        link.innerHTML = '<iframe class="vid" width="100%" height="215" src="https://www.youtube.com/embed/' + youtube + '" frameborder="0" allowfullscreen></iframe>'
+        link.innerHTML = '<iframe class="vid" width="100%" height="215" src="https://www.youtube.com/embed/' + youtube + '" frameborder="0" allowfullscreen></iframe>';
+      } else if (img) {
+        link.innerHTML = '<img src="' + img + '">';
       } else {
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener');
